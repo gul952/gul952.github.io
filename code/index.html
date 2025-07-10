@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <!-- Tailwind config before CDN -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#111827',
+            accent: '#3b82f6'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur z-50 shadow-sm">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <a href="#home" class="text-xl font-semibold">My Portfolio</a>
+      <button id="nav-toggle" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <ul id="nav-menu" class="hidden md:flex space-x-6">
+        <li><a href="#home" class="hover:text-accent">Home</a></li>
+        <li><a href="#projects" class="hover:text-accent">Projects</a></li>
+        <li><a href="#papers" class="hover:text-accent">Papers</a></li>
+        <li><a href="#skills" class="hover:text-accent">Skills</a></li>
+        <li><a href="#experience" class="hover:text-accent">Experience</a></li>
+        <li><a href="#education" class="hover:text-accent">Education</a></li>
+        <li><button id="dark-toggle" class="ml-2">🌙</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+    <div class="text-center space-y-4 px-4">
+      <h1 class="text-4xl md:text-5xl font-bold">Hello, I'm <span class="text-accent">Gulwarina</span></h1>
+      <p class="text-lg md:text-xl">This website showcases my projects. Click “Details” for code/docs.</p>
+      <div class="flex justify-center space-x-4">
+        <a href="#" class="px-4 py-2 border border-accent rounded hover:bg-accent hover:text-white transition">GitHub</a>
+        <a href="#" class="px-4 py-2 border border-accent rounded hover:bg-accent hover:text-white transition">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-8 text-center">Projects</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 px-4">
+
+        <!-- 1. Lost and Found Website (Carousel) -->
+        <div class="relative bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition">
+          <div class="relative h-40 rounded mb-4 overflow-hidden">
+            <img id="project-1-img" src="assets/1.jpg" alt="Lost & Found main" class="object-cover w-full h-full">
+            <button data-project="1" data-dir="prev"
+                    class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition">‹</button>
+            <button data-project="1" data-dir="next"
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition">›</button>
+          </div>
+          <h3 class="text-xl font-semibold">Lost and Found Website</h3>
+          <p class="mt-2 text-sm">
+            University Lost &amp; Found platform: upload item images, AI chatbot matches descriptions, filters results, notifies when found.
+          </p>
+          <div class="mt-4 flex space-x-4 text-accent">
+            <span class="italic text-gray-500 dark:text-gray-400">Demo N/A</span>
+            <a href="https://drive.google.com/drive/folders/1_j5KcHG4741IQNoPri3FyXUtz3c6rgcQ?usp=drive_link"
+               target="_blank" class="hover:underline">Details</a>
+          </div>
+        </div>
+
+        <!-- 2. Remote Health Monitoring System -->
+        
+            <div class="relative bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition">
+<div class="relative h-40 rounded mb-4 overflow-hidden">
+           <!-- NOTE: id changed to project-2-img -->
+           <img id="project-2-img" src="assets/2.jpg" alt="Remote Health" class="object-cover w-full h-full">
+               <!-- NOTE: data-project changed to "2" -->
+            <button data-project="2" data-dir="prev" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition">‹</button>
+               <button data-project="2" data-dir="next" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition">›</button>
+            </div>
+          <h3 class="text-xl font-semibold">Remote Health Monitoring System</h3>
+          <p class="mt-2 text-sm">
+            JavaFX & MySQL app: collects & displays patient vitals remotely, stores data, provides dashboards.
+          </p>
+          <div class="mt-4 flex space-x-4 text-accent">
+            <a href="https://drive.google.com/file/d/1Pxju9mDppPIkAI_9g-0btt0yyRIMvIaR/view?usp=drive_link"
+               target="_blank" class="hover:underline">Demo</a>
+            <a href="https://drive.google.com/drive/folders/1ryluJ4nfO1FmtjMVkSMYrEpmZNINwc6g?usp=drive_link"
+               target="_blank" class="hover:underline">Details</a>
+          </div>
+        </div>
+
+        <!-- 3. Tower of Odyssey -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition">
+          <div class="h-40 rounded mb-4 overflow-hidden">
+            <img src="assets/3.png" alt="Tower of Odyssey" class="object-cover w-full h-full">
+          </div>
+          <h3 class="text-xl font-semibold">Tower of Odyssey</h3>
+          <p class="mt-2 text-sm">
+            C++ maze game: navigate levels, solve puzzles, dynamic generation, score tracking.
+          </p>
+          <div class="mt-4 flex space-x-4 text-accent">
+            <span class="italic text-gray-500 dark:text-gray-400">Demo Coming Soon</span>
+            <a href="https://drive.google.com/drive/folders/1GQa_2gNXuKBWdZw0FGhBxvHwH0t53Hkv?usp=drive_link"
+               target="_blank" class="hover:underline">Details</a>
+          </div>
+        </div>
+
+        <!-- 4. Digital Logic Design (Carousel) -->
+        <div class="relative bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition">
+          <div class="relative h-40 rounded mb-4 overflow-hidden">
+            <img id="project-4-img" src="assets/a.jpg" alt="Digital Logic main" class="object-cover w-full h-full">
+            <button data-project="4" data-dir="prev"
+                    class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition">‹</button>
+            <button data-project="4" data-dir="next"
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition">›</button>
+          </div>
+          <h3 class="text-xl font-semibold">Digital Logic Design</h3>
+          <p class="mt-2 text-sm">
+            Traffic light intersection simulation using digital ICs for realistic timing.
+          </p>
+          <div class="mt-4 flex space-x-4 text-accent">
+            <a href="https://drive.google.com/file/d/1m7lmJu8wDmjzCreGL-2L8OhJzj-W9qMp/view?usp=drive_link"
+               target="_blank" class="hover:underline">Demo</a>
+            <a href="https://drive.google.com/drive/folders/1_j5KcHG4741IQNoPri3FyXUtz3c6rgcQ?usp=drive_link"
+               target="_blank" class="hover:underline">Details</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- PAPERS & REPORTS -->
+  <section id="papers" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-8 text-center">Papers & Reports</h2>
+      <div class="space-y-12 px-4 max-w-5xl mx-auto">
+
+        <!-- 1. Database Indexing & Query Optimization -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Database Indexing & Query Optimization</h3>
+          <p class="text-sm mb-4">
+            Research paper covering B-tree, hash indexing, cost-based optimization, and performance evaluation.
+          </p>
+          <button onclick="togglePDF('pdf1')" class="text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">
+            View PDF
+          </button>
+          <div id="pdf1" class="mt-4 hidden">
+            <iframe src="assets/DBS ASSIGNMENT 3.pdf" class="w-full h-96 rounded border" frameborder="0"></iframe>
+          </div>
+        </div>
+
+        <!-- 2. Mess Management System -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Mess Management System</h3>
+          <p class="text-sm mb-4">
+            Web application documentation: menu planning, attendance tracking, billing, and inventory management.
+          </p>
+          <button onclick="togglePDF('pdf2')" class="text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">
+            View PDF
+          </button>
+          <div id="pdf2" class="mt-4 hidden">
+            <iframe src="assets/Mess Management System.pdf" class="w-full h-96 rounded border" frameborder="0"></iframe>
+          </div>
+        </div>
+
+        <!-- 3. Sports Management System -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Sports Management System</h3>
+          <p class="text-sm mb-4">
+            Report describing player registration, match scheduling, score tracking, and statistics features.
+          </p>
+          <button onclick="togglePDF('pdf3')" class="text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">
+            View PDF
+          </button>
+          <div id="pdf3" class="mt-4 hidden">
+            <iframe src="assets/Sports Management System.pdf" class="w-full h-96 rounded border" frameborder="0"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-8">Skills</h2>
+      <div class="flex flex-wrap justify-center gap-4 px-4">
+        <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-full text-sm">HTML</span>
+        <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-full text-sm">CSS</span>
+        <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-full text-sm">JavaScript</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-8 text-center">Experience</h2>
+      <div class="space-y-6 px-4">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <div class="flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/4 mb-4 md:mb-0">
+              <p class="font-medium">Jan 2024 – Present</p>
+              <p class="text-sm text-gray-500 dark:text-gray-300">Company Name</p>
+            </div>
+            <div class="md:w-3/4">
+              <h3 class="text-xl font-semibold">Role Title</h3>
+              <ul class="list-disc list-inside mt-2 text-sm space-y-1">
+                <li>Key responsibility or achievement.</li>
+                <li>Another point here.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="py-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-8">Education</h2>
+      <div class="space-y-6 max-w-3xl mx-auto px-4">
+
+        <!-- BS Degree -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg transition text-left">
+          <h3 class="text-xl font-semibold mb-1">BS in Data Science</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">
+            National University of Arts and Sciences, Pakistan<br>
+            <span class="italic">2024 – Present</span>
+          </p>
+          <p class="text-sm mb-4">Completed Courses (Grouped):</p>
+
+          <!-- Programming & Software Development -->
+          <button onclick="toggleGroup('group1')" class="text-left w-full font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-4 py-2 rounded">
+            Programming & Software Development
+          </button>
+          <ul id="group1" class="list-disc list-inside text-sm space-y-1 mt-2 mb-4 hidden">
+            <li>Fundamentals of Programming</li>
+            <li>Object-Oriented Programming</li>
+          </ul>
+
+          <!-- Mathematics & Statistics -->
+          <button onclick="toggleGroup('group2')" class="text-left w-full font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-4 py-2 rounded">
+            Mathematics & Statistics
+          </button>
+          <ul id="group2" class="list-disc list-inside text-sm space-y-1 mt-2 mb-4 hidden">
+            <li>Calculus & Analytical Geometry</li>
+            <li>Linear Algebra</li>
+            <li>Multivariable Calculus</li>
+            <li>Discrete Mathematics</li>
+          </ul>
+
+          <!-- Computer Science Foundations -->
+          <button onclick="toggleGroup('group3')" class="text-left w-full font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-4 py-2 rounded">
+            Computer Science Foundations
+          </button>
+          <ul id="group3" class="list-disc list-inside text-sm space-y-1 mt-2 mb-4 hidden">
+            <li>Digital Logic Design</li>
+            <li>Database Systems</li>
+            <li>Application of ICTs</li>
+          </ul>
+
+          <!-- Communication & General Education -->
+          <button onclick="toggleGroup('group4')" class="text-left w-full font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-4 py-2 rounded">
+            Communication & General Education
+          </button>
+          <ul id="group4" class="list-disc list-inside text-sm space-y-1 mt-2 hidden">
+            <li>Functional English</li>
+          </ul>
+        </div>
+
+        <!-- A-Level -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg transition text-left">
+          <h3 class="text-xl font-semibold mb-1">A-Level</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">
+            Islamabad College of Arts and Science<br>
+            <span class="italic">2021 – 2023</span>
+          </p>
+          <p class="text-sm">Grades Achieved:</p>
+          <ul class="list-disc list-inside text-sm space-y-1">
+            <li>Biology – A*</li>
+            <li>Chemistry – A*</li>
+            <li>Physics – A</li>
+            <li>Mathematics – B</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="py-6 text-center text-sm bg-gray-100 dark:bg-gray-800">
+    © <span id="year"></span> Gulwarina Muska Saleem
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // NAV TOGGLE
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu   = document.getElementById('nav-menu');
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('hidden');
+        });
+      }
+
+      // FOOTER YEAR
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // DARK MODE
+      const darkToggle = document.getElementById('dark-toggle');
+      if (darkToggle) {
+        const root = document.documentElement;
+        const setMode = m => {
+          root.classList.toggle('dark', m==='dark');
+          darkToggle.textContent = m==='dark'?'☀️':'🌙';
+        };
+        const stored = localStorage.getItem('theme');
+        const pref = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+        setMode(pref);
+        darkToggle.addEventListener('click', () => {
+          const next = document.documentElement.classList.contains('dark')?'light':'dark';
+          localStorage.setItem('theme', next);
+          setMode(next);
+        });
+      }
+
+      // CAROUSEL LOGIC (Projects 1 & 4)
+      const carouselData = {
+        '1': ['assets/1.jpg','assets/1.1.jpg'],
+        '2': ['assets/2.jpg','assets/2.1.jpg'],
+        '4': ['assets/a.jpg','assets/b.jpg']
+        
+      };
+      Object.entries(carouselData).forEach(([id, imgs]) => {
+        let idx = 0;
+        const mainImg = document.getElementById(`project-${id}-img`);
+        const prevBtn = document.querySelector(`button[data-project="${id}"][data-dir="prev"]`);
+        const nextBtn = document.querySelector(`button[data-project="${id}"][data-dir="next"]`);
+        if (!mainImg || !prevBtn || !nextBtn) return;
+        prevBtn.addEventListener('click', () => {
+          idx = (idx-1+imgs.length)%imgs.length;
+          mainImg.src = imgs[idx];
+        });
+        nextBtn.addEventListener('click', () => {
+          idx = (idx+1)%imgs.length;
+          mainImg.src = imgs[idx];
+        });
+      });
+    });
+
+          function togglePDF(id) {
+            const pdf = document.getElementById(id);
+            const button = pdf.previousElementSibling;
+
+            if (pdf.classList.contains('hidden')) {
+              pdf.classList.remove('hidden');
+              button.textContent = 'Hide PDF';
+            } else {
+              pdf.classList.add('hidden');
+              button.textContent = 'View PDF';
+            }
+          }
+
+          function toggleGroup(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle("hidden");
+          }
+
+  </script>
+</body>
+</html>
